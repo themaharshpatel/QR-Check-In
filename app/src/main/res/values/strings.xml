@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">QR Check-In</string>
+    <string name="appearance_header">Appearance</string>
+    <string name="settings">Settings</string>
+</resources>
