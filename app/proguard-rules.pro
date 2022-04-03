@@ -20,3 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keepattributes Signature
+-keepclassmembers class dev.maharsh.qrin.datamodel.*{*;}

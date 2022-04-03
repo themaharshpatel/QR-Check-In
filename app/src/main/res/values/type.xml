@@ -78,11 +78,4 @@
         <item name="fontFamily">@font/noto_sans_regular</item>
     </style>
 
-    <style name="TextAppearance.MyTheme.Overline.PreferenceCategory" parent="TextAppearance.MaterialComponents.Overline">
-        <!--Your custom type style here-->
-        <item name="android:textColor">?attr/colorOnSurface</item>
-        <item name="fontFamily">@font/noto_sans_bold</item>
-        <item name="android:textSize">12sp</item>
-    </style>
-
 </resources>

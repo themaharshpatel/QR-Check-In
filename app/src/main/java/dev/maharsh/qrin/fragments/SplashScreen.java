@@ -1,5 +1,6 @@
 package dev.maharsh.qrin.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import dev.maharsh.qrin.R;
 import dev.maharsh.qrin.databinding.FragmentSplashScreenBinding;
 
 
+@SuppressLint("CustomSplashScreen")
 public class SplashScreen extends Fragment {
 
     FragmentSplashScreenBinding binding;
@@ -24,9 +26,7 @@ public class SplashScreen extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentSplashScreenBinding.inflate(inflater);
-        new Handler(Looper.myLooper()).postDelayed(()->{
-            Navigation.findNavController(container).navigate(R.id.action_splashScreen_to_homeFragment);
-        },1000);
+        new Handler(Looper.myLooper()).postDelayed(()-> Navigation.findNavController(container).navigate(R.id.action_splashScreen_to_homeFragment),1000);
 
         return binding.getRoot();
     }

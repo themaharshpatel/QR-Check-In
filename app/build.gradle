@@ -13,13 +13,32 @@ android {
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            storeFile file(DEBUG_KEY_LOCATION)
+            storePassword DEBUG_KEYSTORE_PASSWORD
+            keyAlias = 'debug'
+            keyPassword DEBUG_KEY_PASSWORD
+        }
+        release {
+            storeFile file(RELEASE_KEY_LOCATION)
+            storePassword RELEASE_KEYSTORE_PASSWORD
+            keyAlias = 'qrcheckinrelease'
+            keyPassword RELEASE_KEY_PASSWORD
+        }
     }
 
     buildTypes {
-        release {
+        debug {
+            shrinkResources false
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
